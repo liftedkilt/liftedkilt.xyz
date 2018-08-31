@@ -4,7 +4,6 @@ $color2: rgb(19, 108, 192);
 $color3: rgb(16, 121, 191);
 $color4: hsl(48, 82.3%, 51.2%);
 $color5: rgb(241, 179, 120);
-
 $cp-darkblue: $color1;
 $cp-medblue: $color2;
 $cp-lightblue: $color3;
@@ -13,9 +12,9 @@ $cp-sand: $color5;
 $cp-linkedinblue: rgb(0, 119, 181);
 $cp-twitterblue: rgb(85, 172, 238);
 $cp-instagrammaroon: rgb(205, 72, 107);
-$cp-githubgreen: rgb(45,186,78);
-
-body, html {
+$cp-githubgreen: rgb(45, 186, 78);
+body,
+html {
     height: 100%;
 }
 
@@ -34,39 +33,38 @@ body, html {
         border-bottom: 10px solid $cp-lightblue;
     }
 }
-    #hero-text {
-        position: relative;
-        z-index: 1;
-        color: white;
-        text-align: center;
-        font-size: 4rem;
-        line-height: 4rem;
-        text-shadow: 0 2px 2px rgba(0, 0, 0, 0.35);
-        margin: 30vh auto 0;
 
-        h1 {
-            font-family: 'Work Sans', sans-serif;
-            font-size: 84px;
-            margin-bottom: 0%;
-            padding-bottom: 0%;
-        }
-
-        p {
-            font-family: 'Roboto', sans-serif;
-            font-size: 24px;
-            margin-top: 1%;
-        }
+#hero-text {
+    position: relative;
+    z-index: 1;
+    color: white;
+    text-align: center;
+    font-size: 4rem;
+    line-height: 4rem;
+    text-shadow: 0 2px 2px rgba(0, 0, 0, 0.35);
+    margin: 30vh auto 0;
+    h1 {
+        font-family: 'Work Sans', sans-serif;
+        font-size: 84px;
+        margin-bottom: 0%;
+        padding-bottom: 0%;
     }
+    p {
+        font-family: 'Roboto', sans-serif;
+        font-size: 24px;
+        margin-top: 1%;
+    }
+}
 
-  body .hero:before {
+body .hero:before {
     content: '';
     height: 100%;
     width: 100%;
     background: $cp-darkblue;
     position: absolute;
-  }
+}
 
-  body .content {
+body .content {
     position: absolute;
     z-index: 1000;
     top: 100vh;
@@ -74,7 +72,7 @@ body, html {
     width: 100%;
     box-shadow: 0 -5px 3px rgba(0, 0, 0, 0.1);
     border-top: 10px solid $cp-lightblue;
-  }
+}
 
 #social-bar {
     display: grid;
@@ -82,26 +80,35 @@ body, html {
     margin: 5% 10% 10% 10%;
     justify-content: center;
     justify-items: center;
-
+    transition: transform .5s;
+    /* Animation */
     .contact-logo {
         font-size: 48px;
         color: $cp-darkblue;
     }
-
-    #github-logo:hover {
-        color: $cp-githubgreen;
+    #github-logo {
+        &:hover {
+            color: $cp-githubgreen;
+            transform: scale(1.25);
+        }
     }
-
-    #linkedin-logo:hover {
-        color: $cp-linkedinblue;
+    #linkedin-logo {
+        &:hover {
+            color: $cp-linkedinblue;
+            transform: scale(1.25);
+        }
     }
-
-    #instagram-logo:hover {
-        color: $cp-instagrammaroon;
+    #instagram-logo {
+        &:hover {
+            color: $cp-instagrammaroon;
+            transform: scale(1.25);
+        }
     }
-
-    #twitter-logo:hover {
-        color: $cp-twitterblue;
+    #twitter-logo {
+        &:hover {
+            color: $cp-twitterblue;
+            transform: scale(1.25);
+        }
     }
 }
 
@@ -111,7 +118,6 @@ body, html {
     margin: 5% 5% 10% 5%;
     justify-content: center;
     justify-items: center;
-
     #bio-header {
         grid-column-start: 2;
         grid-column-end: 5;
@@ -119,7 +125,6 @@ body, html {
         grid-row: 1;
         overflow-wrap: normal;
     }
-
     #bio-text {
         grid-column-start: 2;
         grid-row: 2;
@@ -128,17 +133,18 @@ body, html {
         text-align: left;
         align-self: center;
     }
-
     #bio-image {
-        width: 100%;
+        width: 40%;
         max-height: 100%;
         object-fit: cover;
         grid-row: 2;
         grid-column-start: 4;
         padding-bottom: 50px;
+        &:hover {
+            transform: scale(1.75);
+        }
     }
 }
-
 
 .divider-text {
     grid-column: 1 / span 4;
@@ -149,74 +155,10 @@ body, html {
     border-bottom: 2px solid $cp-sand;
 }
 
-
-
-// wut is all this???
-
-.transition-animation {
-    -webkit-transition: all .5s;
-    -moz-transition: all .5s;
-    -ms-transition: all .5s;
-    -o-transition: all .5s;
-    transition: all .5s;
-}
-
-  /*
-  * Icon styles
-  *
-  * There are styles for icon and everything which are connected with it.
-  */
-.icon {
-  display: inline-block;
-  position: relative;
-  z-index: 1;
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
-  font-size: 24px;
-  line-height: 52px;
-  text-align: center;
-}
-.icon:after {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  border-radius: 50%;
-  content: '';
-  box-sizing: content-box;
-}
-/* Hover effect */
-.icon-effect .icon {
-  -webkit-transition: all .5s;
-  -moz-transition: all .5s;
-  -ms-transition: all .5s;
-  -o-transition: all .5s;
-  transition: all .5s;
-}
-
-.icon-effect .icon:after {
-  top: -7px;
-  left: -7px;
-  padding: 7px;
-  box-shadow: 0 0 0 4px #f1f1f1;
-  -webkit-transition: all .5s;
-  -moz-transition: all .5s;
-  -ms-transition: all .5s;
-  -o-transition: all .5s;
-  transition: all .5s;
-  -webkit-transform: scale(0.8);
-  -moz-transform: scale(0.8);
-  -ms-transform: scale(0.8);
-  -o-transform: scale(0.8);
-  transform: scale(0.8);
-  opacity: 0;
-}
-
-.icon-effect-1a .icon:hover:after {
-  -webkit-transform: scale(1);
-  -moz-transform: scale(1);
-  -ms-transform: scale(1);
-  -o-transform: scale(1);
-  transform: scale(1);
-  opacity: 1;
+.transition {
+    -webkit-transition: all .3s;
+    -moz-transition: all .3s;
+    -ms-transition: all .3s;
+    -o-transition: all .3s;
+    transition: all .3s;
 }

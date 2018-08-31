@@ -1,4 +1,5 @@
-body, html {
+body,
+html {
   height: 100%;
 }
 
@@ -62,6 +63,8 @@ body .content {
   margin: 5% 10% 10% 10%;
   justify-content: center;
   justify-items: center;
+  transition: transform 0.5s;
+  /* Animation */
 }
 #social-bar .contact-logo {
   font-size: 48px;
@@ -69,15 +72,19 @@ body .content {
 }
 #social-bar #github-logo:hover {
   color: #2dba4e;
+  transform: scale(1.25);
 }
 #social-bar #linkedin-logo:hover {
   color: #0077b5;
+  transform: scale(1.25);
 }
 #social-bar #instagram-logo:hover {
   color: #cd486b;
+  transform: scale(1.25);
 }
 #social-bar #twitter-logo:hover {
   color: #55acee;
+  transform: scale(1.25);
 }
 
 #bio {
@@ -103,12 +110,15 @@ body .content {
   align-self: center;
 }
 #bio #bio-image {
-  width: 100%;
+  width: 40%;
   max-height: 100%;
   object-fit: cover;
   grid-row: 2;
   grid-column-start: 4;
   padding-bottom: 50px;
+}
+#bio #bio-image:hover {
+  transform: scale(1.75);
 }
 
 .divider-text {
@@ -120,74 +130,12 @@ body .content {
   border-bottom: 2px solid #f1b378;
 }
 
-.transition-animation {
-  -webkit-transition: all 0.5s;
-  -moz-transition: all 0.5s;
-  -ms-transition: all 0.5s;
-  -o-transition: all 0.5s;
-  transition: all 0.5s;
-}
-
-/*
-* Icon styles
-*
-* There are styles for icon and everything which are connected with it.
-*/
-.icon {
-  display: inline-block;
-  position: relative;
-  z-index: 1;
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
-  font-size: 24px;
-  line-height: 52px;
-  text-align: center;
-}
-
-.icon:after {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  border-radius: 50%;
-  content: "";
-  box-sizing: content-box;
-}
-
-/* Hover effect */
-.icon-effect .icon {
-  -webkit-transition: all 0.5s;
-  -moz-transition: all 0.5s;
-  -ms-transition: all 0.5s;
-  -o-transition: all 0.5s;
-  transition: all 0.5s;
-}
-
-.icon-effect .icon:after {
-  top: -7px;
-  left: -7px;
-  padding: 7px;
-  box-shadow: 0 0 0 4px #f1f1f1;
-  -webkit-transition: all 0.5s;
-  -moz-transition: all 0.5s;
-  -ms-transition: all 0.5s;
-  -o-transition: all 0.5s;
-  transition: all 0.5s;
-  -webkit-transform: scale(0.8);
-  -moz-transform: scale(0.8);
-  -ms-transform: scale(0.8);
-  -o-transform: scale(0.8);
-  transform: scale(0.8);
-  opacity: 0;
-}
-
-.icon-effect-1a .icon:hover:after {
-  -webkit-transform: scale(1);
-  -moz-transform: scale(1);
-  -ms-transform: scale(1);
-  -o-transform: scale(1);
-  transform: scale(1);
-  opacity: 1;
+.transition {
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  -ms-transition: all 0.3s;
+  -o-transition: all 0.3s;
+  transition: all 0.3s;
 }
 
 /*# sourceMappingURL=main.css.map */
